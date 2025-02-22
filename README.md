@@ -1,2 +1,2 @@
 # pbob-core
-Smart contracts
+Smart contracts (Poker Backing on Blockchain)
