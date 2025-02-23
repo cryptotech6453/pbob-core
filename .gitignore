@@ -1,3 +1,4 @@
+# Компилированные файлы
 target/
 Cargo.lock
 *.wasm
