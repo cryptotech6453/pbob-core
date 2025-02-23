@@ -2,3 +2,9 @@
 target/
 Cargo.lock
 *.wasm
+
+# IDE и системные файлы
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
