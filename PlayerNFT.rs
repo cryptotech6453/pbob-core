@@ -73,3 +73,27 @@ fn save_nft(storage: &mut dyn Storage, owner: &str, nft: &PlayerNFT) -> StdResul
     // Заглушка: логика сохранения NFT в хранилище
     unimplemented!()
 }
+
+const NFT_STORAGE: Map<&Addr, PlayerNFT> = Map::new("player_nfts");
+
+pub fn load_nft(deps: Deps, owner: &Addr) -> StdResult<PlayerNFT> {
+    NFT_STORAGE.load(deps.storage, owner)
+}
+
+pub fn save_nft(deps: DepsMut, owner: &Addr, nft: &PlayerNFT) -> StdResult<()> {
+    NFT_STORAGE.save(deps.storage, owner, nft)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
