@@ -84,6 +84,13 @@ pub fn save_nft(deps: DepsMut, owner: &Addr, nft: &PlayerNFT) -> StdResult<()> {
     NFT_STORAGE.save(deps.storage, owner, nft)
 }
 
+pub fn execute_mint_nft(
+    deps: DepsMut,
+    env: Env,
+    info: MessageInfo,
+) -> Result<Response, ContractError> {
+    unimplemented!()
+}
 
 
 
