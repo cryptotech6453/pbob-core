@@ -99,6 +99,8 @@ pub fn execute_mint_nft(
         afs: 0.0,
     };
 
+    save_nft(deps, &info.sender, &nft)?;
+    
     unimplemented!() // Пока оставляем заглушку
 }
 
