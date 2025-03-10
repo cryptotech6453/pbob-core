@@ -101,7 +101,9 @@ pub fn execute_mint_nft(
 
     save_nft(deps, &info.sender, &nft)?;
     
-    unimplemented!() // Пока оставляем заглушку
+    Ok(Response::new()
+    .add_attribute("action", "mint_nft")
+    .add_attribute("owner", info.sender.to_string()))
 }
 
 
