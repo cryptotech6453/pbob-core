@@ -89,7 +89,17 @@ pub fn execute_mint_nft(
     env: Env,
     info: MessageInfo,
 ) -> Result<Response, ContractError> {
-    unimplemented!()
+        let nft = PlayerNFT {
+        owner: info.sender.clone(),
+        abi: 0.0,
+        games: 0,
+        games_per_month: 0,
+        roi: 0.0,
+        dollars_per_tournament: 0.0,
+        afs: 0.0,
+    };
+
+    unimplemented!() // Пока оставляем заглушку
 }
 
 
