@@ -127,10 +127,12 @@ pub fn execute_update_stats(
     nft.afs = new_afs;
 
     save_nft(deps, &info.sender, &nft)?;
+
+    Ok(Response::new()
+        .add_attribute("action", "update_stats")
+        .add_attribute("owner", info.sender.to_string()))
 }
 
-unimplemented!() // Пока оставляем заглушку
-}
 
 
 
