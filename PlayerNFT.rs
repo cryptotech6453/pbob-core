@@ -106,7 +106,19 @@ pub fn execute_mint_nft(
         .add_attribute("owner", info.sender.to_string()))
 }
 
-
+pub fn execute_update_stats(
+    deps: DepsMut,
+    _env: Env,
+    info: MessageInfo,
+    new_abi: f64,
+    new_games: u32,
+    new_games_per_month: u32,
+    new_roi: f64,
+    new_dollars_per_tournament: f64,
+    new_afs: f64,
+) -> Result<Response, ContractError> {
+    unimplemented!()
+}
 
 
 
