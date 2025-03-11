@@ -125,6 +125,8 @@ pub fn execute_update_stats(
     nft.roi = new_roi;
     nft.dollars_per_tournament = new_dollars_per_tournament;
     nft.afs = new_afs;
+
+    save_nft(deps, &info.sender, &nft)?;
 }
 
 unimplemented!() // Пока оставляем заглушку
