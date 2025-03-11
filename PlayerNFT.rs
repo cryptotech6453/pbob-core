@@ -117,10 +117,18 @@ pub fn execute_update_stats(
     new_dollars_per_tournament: f64,
     new_afs: f64,
 ) -> Result<Response, ContractError> {
-    unimplemented!()
+    let mut nft = load_nft(deps.storage, &info.sender)?;
+
+    nft.abi = new_abi;
+    nft.games = new_games;
+    nft.games_per_month = new_games_per_month;
+    nft.roi = new_roi;
+    nft.dollars_per_tournament = new_dollars_per_tournament;
+    nft.afs = new_afs;
 }
 
-
+unimplemented!() // Пока оставляем заглушку
+}
 
 
 
