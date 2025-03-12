@@ -11,3 +11,15 @@ pub struct BackerFilter {
     pub afs_range: (u32, u32),  // Диапазон игроков в турнирах
 }
 
+pub fn execute_set_backing_filter(
+    deps: DepsMut,
+    info: MessageInfo,
+    min_abi: f64,
+    min_games: u32,
+    min_games_per_month: u32,
+    min_roi: f64,
+    min_dollars_per_tournament: f64,
+    min_afs: f64,
+) -> Result<Response, ContractError> {
+    unimplemented!()
+}
