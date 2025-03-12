@@ -21,5 +21,19 @@ pub fn execute_set_backing_filter(
     min_dollars_per_tournament: f64,
     min_afs: f64,
 ) -> Result<Response, ContractError> {
-    unimplemented!()
+        let filter = BackerFilter {
+        backer: info.sender.clone(),
+        min_abi,
+        min_games,
+        min_games_per_month,
+        min_roi,
+        min_dollars_per_tournament,
+        min_afs,
+    };
+ unimplemented!() // Пока оставляем заглушку
 }
+
+
+
+
+    
