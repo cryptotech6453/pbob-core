@@ -30,6 +30,8 @@ pub fn execute_set_backing_filter(
         min_dollars_per_tournament,
         min_afs,
     };
+
+    save_backer_filter(deps, &info.sender, &filter)?;
  unimplemented!() // Пока оставляем заглушку
 }
 
