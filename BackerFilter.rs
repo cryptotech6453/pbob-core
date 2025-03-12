@@ -21,7 +21,7 @@ pub fn execute_set_backing_filter(
     min_dollars_per_tournament: f64,
     min_afs: f64,
 ) -> Result<Response, ContractError> {
-        let filter = BackerFilter {
+    let filter = BackerFilter {
         backer: info.sender.clone(),
         min_abi,
         min_games,
@@ -32,8 +32,12 @@ pub fn execute_set_backing_filter(
     };
 
     save_backer_filter(deps, &info.sender, &filter)?;
- unimplemented!() // Пока оставляем заглушку
+
+    Ok(Response::new()
+        .add_attribute("action", "set_backing_filter")
+        .add_attribute("backer", info.sender.to_string()))
 }
+
 
 
 
