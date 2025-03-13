@@ -38,7 +38,13 @@ pub fn execute_set_backing_filter(
         .add_attribute("backer", info.sender.to_string()))
 }
 
-
+pub fn query_is_player_eligible(
+    deps: Deps,
+    player: Addr,
+    backer: Addr,
+) -> Result<Binary, ContractError> {
+    unimplemented!()
+}
 
 
 
