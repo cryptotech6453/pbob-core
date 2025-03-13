@@ -43,6 +43,8 @@ pub fn query_is_player_eligible(
     player: Addr,
     backer: Addr,
 ) -> Result<Binary, ContractError> {
+    let player_nft = load_nft(deps, &player)?;
+    let backer_filter = load_backer_filter(deps, &backer)?;
     unimplemented!()
 }
 
