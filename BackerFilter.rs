@@ -53,7 +53,8 @@ pub fn query_is_player_eligible(
         && player_nft.dollars_per_tournament >= backer_filter.min_dollars_per_tournament
         && player_nft.afs >= backer_filter.min_afs;
     
-    unimplemented!()
+    let response = json!({ "eligible": is_eligible }).to_string();
+    Ok(Binary::from(response.as_bytes()))
 }
 
 
