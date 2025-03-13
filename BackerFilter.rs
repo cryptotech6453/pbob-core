@@ -45,6 +45,14 @@ pub fn query_is_player_eligible(
 ) -> Result<Binary, ContractError> {
     let player_nft = load_nft(deps, &player)?;
     let backer_filter = load_backer_filter(deps, &backer)?;
+
+    let is_eligible = player_nft.abi >= backer_filter.min_abi
+        && player_nft.games >= backer_filter.min_games
+        && player_nft.games_per_month >= backer_filter.min_games_per_month
+        && player_nft.roi >= backer_filter.min_roi
+        && player_nft.dollars_per_tournament >= backer_filter.min_dollars_per_tournament
+        && player_nft.afs >= backer_filter.min_afs;
+    
     unimplemented!()
 }
 
