@@ -135,6 +135,7 @@ pub fn execute_update_stats(
 
 pub fn query_player_stats(deps: Deps, player: Addr) -> Result<Binary, ContractError> {
     let player_nft = load_nft(deps, &player)?;
+
     let response = json!({
         "owner": player_nft.owner,
         "abi": player_nft.abi,
@@ -145,7 +146,8 @@ pub fn query_player_stats(deps: Deps, player: Addr) -> Result<Binary, ContractEr
         "afs": player_nft.afs
     })
     .to_string();
-    unimplemented!()
+
+    Ok(Binary::from(response.as_bytes()))
 }
 
 
