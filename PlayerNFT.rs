@@ -133,7 +133,10 @@ pub fn execute_update_stats(
         .add_attribute("owner", info.sender.to_string()))
 }
 
-
+pub fn query_player_stats(deps: Deps, player: Addr) -> Result<Binary, ContractError> {
+    let player_nft = load_nft(deps, &player)?;
+    unimplemented!()
+}
 
 
 
