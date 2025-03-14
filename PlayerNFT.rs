@@ -144,6 +144,7 @@ pub fn query_player_stats(deps: Deps, player: Addr) -> Result<Binary, ContractEr
         "dollars_per_tournament": player_nft.dollars_per_tournament,
         "afs": player_nft.afs
     })
+    .to_string();
     unimplemented!()
 }
 
