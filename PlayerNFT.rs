@@ -135,6 +135,15 @@ pub fn execute_update_stats(
 
 pub fn query_player_stats(deps: Deps, player: Addr) -> Result<Binary, ContractError> {
     let player_nft = load_nft(deps, &player)?;
+    let response = json!({
+        "owner": player_nft.owner,
+        "abi": player_nft.abi,
+        "games": player_nft.games,
+        "games_per_month": player_nft.games_per_month,
+        "roi": player_nft.roi,
+        "dollars_per_tournament": player_nft.dollars_per_tournament,
+        "afs": player_nft.afs
+    })
     unimplemented!()
 }
 
